@@ -18,14 +18,13 @@ with col1:
     ).transform_filter((alt.datum.state == 'VT'))
   
   st.altair_chart(states)
-
-  """# US states background
-  background = alt.Chart(states).mark_geoshape(
-      fill='lightgray',
-      stroke='white'
-  ).properties(
-      width=500,
-      height=300
-  ).project('albersUsa')
-
-  st.altair_chart(states)"""
+  
+  # tree locations on map
+  points = alt.Chart(data).mark_circle(
+      size=10,
+      color='steelblue'
+  ).encode(
+      longitude='Y:Q',
+      latitude='X:Q',
+      tooltip=['SPECIES', 'ConditionID']
+  )
