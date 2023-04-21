@@ -12,15 +12,13 @@ with col1:
   # CHART 1 - Point Map of Vermont
 
   # VT Map
-  states = alt.Chart(states_data).mark_geoshape(
+  state_background = alt.Chart(states_data).mark_geoshape(
         fill='lightgray',
         stroke='white'
     ).transform_filter((alt.datum.state == 'VT'))
   
-  st.altair_chart(states)
-  
   # tree locations on map
-  points = alt.Chart(data).mark_circle(
+  trees = alt.Chart(data).mark_circle(
       size=10,
       color='steelblue'
   ).encode(
@@ -28,3 +26,5 @@ with col1:
       latitude='X:Q',
       tooltip=['SPECIES', 'ConditionID']
   )
+  
+  #st.altair_chart(states)
