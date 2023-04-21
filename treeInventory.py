@@ -8,17 +8,16 @@ st.set_page_config(page_title="Vermont Tree Inventory", layout="wide", initial_s
 
 col1 = st.columns(1)
 
-
 with col1:
   # CHART 1 - Point Map of Vermont
 
-  # Vermont map
+  # VT Map
   states = alt.Chart(states_data).mark_geoshape(
         fill='lightgray',
         stroke='white'
     ).transform_filter((alt.datum.state == 'VT'))
   
-  st.altair(states)
+  st.altair_chart(states)
 
   """# US states background
   background = alt.Chart(states).mark_geoshape(
