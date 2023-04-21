@@ -1,44 +1,36 @@
 import pandas as pd
 import altair as alt
 import streamlit as st
+from vega_datasets import data
 
-data = pd.read_csv('https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv')
+data = pd.read_csv('https://raw.githubusercontent.com/KatieS-216/TreeData_VT/main/Municipal_Tree_Inventory.csv')
 
-# data.sample(10)
+st.set_page_config(page_title="Vermont Tree Inventory", layout="wide", initial_sidebar_state="collapsed")
 
-st.set_page_config(page_title="Titanic Data", layout="wide", initial_sidebar_state="collapsed")
-
-col1, col2, col3 = st.columns(3)
+col1 = st.columns(1)
 
 
 with col1:
-  # CHART 1 - HISTOGRAM OF CLASS
+  # CHART 1 - Point Map of Vermont
 
-  hist_class = alt.Chart(data).mark_bar().encode(
-      alt.X("Pclass:Q", bin=True),
-      y='count()'
-  )
+  # Read in polygons from topojson
+  states = alt.topo_feature(data.us_10m.url, feature='states')
 
-  st.altair_chart(hist_class)
+  # Vermont map
+  states = alt.Chart(states_data).mark_geoshape(
+        fill='lightgray',
+        stroke='white'
+    ).transform_filter((alt.datum.state == 'VT'))
+  
+  st.altair(states)
 
-with col2:
-  # CHART 2 - SCATTERPLOT OF AGE & FARE
+  """# US states background
+  background = alt.Chart(states).mark_geoshape(
+      fill='lightgray',
+      stroke='white'
+  ).properties(
+      width=500,
+      height=300
+  ).project('albersUsa')
 
-  scatter_age = alt.Chart(data).mark_circle().encode(
-      x='Age',
-      y='Fare',
-      color = 'Survived',
-      tooltip = ['Age','Fare','Survived','Name']
-  ).interactive()
-
-  st.altair_chart(scatter_age)
-
-with col3:
-  # CHART 3 - HISTOGRAM OF FARE
-
-  hist_fare = alt.Chart(data).mark_bar().encode(
-      alt.X("Fare:Q", bin=True),
-      y='count()'
-  )
-
-  st.altair_chart(hist_fare)
+  st.altair_chart(states)"""
