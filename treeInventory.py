@@ -11,8 +11,8 @@ col1 = st.columns(1)
 with col1:
   # CHART 1 - Point Map of Vermont
 
- trees = pd.DataFrame(
+  trees = pd.DataFrame(
     #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
     columns=['X', 'Y'])
 
-st.map(trees)
+  st.map(trees)
