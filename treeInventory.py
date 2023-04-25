@@ -13,4 +13,4 @@ trees = pd.DataFrame(
     columns=['X', 'Y'])
 
 with col1:
-  st.map(trees)
+    st.map(trees)
