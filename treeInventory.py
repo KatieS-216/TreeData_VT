@@ -12,7 +12,7 @@ trees = pd.DataFrame(
     #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
     columns=[data['X'], data['Y']])
 
-trees.dropna(axi=1, inplace=True)
+trees.dropna(axis=1, inplace=True)
 
 with col1:
     st.map(trees)
