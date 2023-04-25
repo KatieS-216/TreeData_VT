@@ -6,7 +6,8 @@ data = pd.read_csv('https://raw.githubusercontent.com/KatieS-216/TreeData_VT/mai
 
 st.set_page_config(page_title="Vermont Tree Inventory", layout="wide", initial_sidebar_state="collapsed")
 
-col1 = st.columns(1)
+mapCol = st.columns(1)
+col2, col3= st.columns(2)
 
 trees = pd.DataFrame(
     #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
@@ -14,5 +15,5 @@ trees = pd.DataFrame(
 
 trees.dropna(axis=1, inplace=True)
 
-with col1:
+with mapCol:
     st.map(trees)
