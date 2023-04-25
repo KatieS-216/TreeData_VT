@@ -13,5 +13,4 @@ trees = pd.DataFrame(
     columns=['X', 'Y'])
 
 with col1:
-  # CHART 1 - Point Map of Vermont
   st.map(trees)
