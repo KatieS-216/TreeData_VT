@@ -11,11 +11,7 @@ st.set_page_config(page_title="Vermont Tree Inventory", layout="wide", initial_s
 # col2, col3= st.columns(2)
 
 d = {'lat': data['X'], 'lon': data['Y']}
-
-trees = pd.DataFrame(
-    data = d)
-
-trees.dropna(axis=1, inplace=True)
+trees = pd.DataFrame(data=d)
 
 # with mapCol:
 #    st.map(trees)
