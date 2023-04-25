@@ -11,20 +11,8 @@ col1 = st.columns(1)
 with col1:
   # CHART 1 - Point Map of Vermont
 
-  # VT Map
-  state_background = alt.Chart(states_data).mark_geoshape(
-        fill='lightgray',
-        stroke='white'
-    ).transform_filter((alt.datum.state == 'VT'))
-  
-  # tree locations on map
-  trees = alt.Chart(data).mark_circle(
-      size=10,
-      color='steelblue'
-  ).encode(
-      longitude='Y:Q',
-      latitude='X:Q',
-      tooltip=['SPECIES', 'ConditionID']
-  )
-  
-  #st.altair_chart(states)
+ trees = pd.DataFrame(
+    #np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['X', 'Y'])
+
+st.map(trees)
