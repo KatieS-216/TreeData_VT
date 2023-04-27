@@ -20,7 +20,7 @@ x1, y1 = transf.transform(data['X'], data['Y'])
 d = {'lat': x1, 'lon': y1}
 trees = pd.DataFrame(data=d)
 
-trees.dropna(axis=1, inplace=True)
+#trees.dropna(axis=1, inplace=True)
 
 # with mapCol:
 st.map(trees)
