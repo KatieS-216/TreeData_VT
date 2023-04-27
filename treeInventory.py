@@ -18,7 +18,7 @@ x1, y1 = transf.transform(data['X'], data['Y'])
 #print(x1, y1)
 
 d = {'lat': x1, 'lon': y1}
-trees = pd.DataFrame(data=d)
+trees = pd.DataFrame(data=d, dtype=float64)
 
 #trees.dropna(axis=1, inplace=True)
 
