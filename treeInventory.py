@@ -2,7 +2,7 @@ import pandas as pd
 import altair as alt
 from pyproj import Transformer
 import streamlit as st
-from vega_datasets import data
+# from vega_datasets import data
 
 treedata = pd.read_csv('https://raw.githubusercontent.com/KatieS-216/TreeData_VT/main/Municipal_Tree_Inventory.csv', low_memory=False)
 
