@@ -41,3 +41,10 @@ points = alt.Chart(trees).mark_circle(
 )
 
 states + points
+
+with col2:
+    alt.Chart(treedata).mark_bar().encode(
+    x=data['ConditionID'],
+    y='count()')
+
+st.altair_chart(Chart)
