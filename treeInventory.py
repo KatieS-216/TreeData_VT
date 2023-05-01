@@ -2,6 +2,7 @@ import pandas as pd
 import altair as alt
 from pyproj import Transformer
 import streamlit as st
+import numpy as np
 # from vega_datasets import data
 
 treedata = pd.read_csv('https://raw.githubusercontent.com/KatieS-216/TreeData_VT/main/Municipal_Tree_Inventory.csv', low_memory=False)
@@ -19,6 +20,11 @@ d = {'lat': x1, 'lon': y1}
 
 token = 'pk.eyJ1Ijoia2F0aWUtcy0yMTYiLCJhIjoiY2xoNWhrdjdwMDE1OTNkcDUwMDZ0b3hqYiJ9.kov77lplpJ-rqzlQeExusw'
 
-treemap = pd.Dataframe(columns= [d['lat'], d['lon']])
+df = pd.DataFrame(
+    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+    columns=['lat', 'lon'])
 
-st.map(treemap)
+st.map(df)
+
+# treemap = pd.Dataframe(columns= [d['lat'], d['lon']])
+# st.map(treemap)
