@@ -1,6 +1,7 @@
 import pandas as pd
 import altair as alt
 import streamlit as st
+import numpy as np
 from pyproj import Transformer
 
 data = pd.read_csv('https://raw.githubusercontent.com/KatieS-216/TreeData_VT/main/Municipal_Tree_Inventory.csv', low_memory=False)
