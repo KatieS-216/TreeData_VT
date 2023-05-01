@@ -47,8 +47,8 @@ states + points
 """
 
 with col2:
-    alt.Chart(treedata).mark_bar().encode(
+    hist_condition = alt.Chart(treedata).mark_bar().encode(
     x=treedata['ConditionID'],
     y='count()')
 
-st.altair_chart(Chart)
+st.altair_chart(hist_condition)
