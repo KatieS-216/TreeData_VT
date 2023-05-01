@@ -19,44 +19,6 @@ alt.data_transformers.disable_max_rows()
 
 token = 'pk.eyJ1Ijoia2F0aWUtcy0yMTYiLCJhIjoiY2xoNWhrdjdwMDE1OTNkcDUwMDZ0b3hqYiJ9.kov77lplpJ-rqzlQeExusw'
 
-treemap = pd.Dataframe(columns=['lat','lon'])
+treemap = pd.Dataframe(d)
 
 st.map(treemap)
-
-
-"""
-# MAP
-
-# Read trees in points
-trees = pd.DataFrame(d)
-
-# Read in polygons from topojson
-states_data = alt.topo_feature(data.us_10m.url, feature='states')
-
-# US states background
-states = alt.Chart(states_data).mark_geoshape(
-    fill='lightgray',
-    stroke='white'
-).project('albersUsa'
-).transform_filter((alt.datum.id == '22'))
-
-# tree positions on background
-points = alt.Chart(trees).mark_circle(
-    size=10,
-    color='steelblue'
-).encode(
-    longitude='lat:Q',
-    latitude='lon:Q',
-    #tooltip
-)
-
-states + points
-"""
-'''
-with col2:
-    hist_condition = alt.Chart(treedata).mark_bar().encode(
-    x=treedata['ConditionID'],
-    y='count()')
-
-st.altair_chart(hist_condition)
-'''
