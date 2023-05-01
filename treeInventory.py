@@ -15,14 +15,8 @@ transf = Transformer.from_crs( "epsg:3684","epsg:4326",always_xy=False)
 
 x1, y1 = transf.transform(data['X'], data['Y'])
 
-#print(x1, y1)
-
 d = {'lat': x1, 'lon': y1}
-trees = pd.DataFrame(data=d, dtype='float64')
 
-#trees.dropna(axis=1, inplace=True)
+trees = pd.DataFrame(columns=['lat','lon'])
 
-# with mapCol:
 st.map(trees)
-
-#data['Y'].sample(10)
