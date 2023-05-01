@@ -15,7 +15,10 @@ transf = Transformer.from_crs( "epsg:3684","epsg:4326",always_xy=False)
 
 x1, y1 = transf.transform(data['X'], data['Y'])
 
-d = {'lat': x1, 'lon': y1}
+#d = {'lat': x1, 'lon': y1}
+
+data['lat'] = x1
+data['lon'] = y1
 
 trees = pd.DataFrame(columns=['lat','lon'])
 
