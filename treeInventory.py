@@ -18,15 +18,15 @@ x1, y1 = transf.transform(data['X'], data['Y'])
 
 #d = {'lat': x1, 'lon': y1}
 
-"""lat = x1
+lat = x1
 lon = y1
 
-trees = pd.DataFrame(columns=['lat','lon'])
+trees = pd.DataFrame(d, columns=['lat','lon'])
 
-st.map(trees)"""
+st.map(trees)
 
-df = pd.DataFrame(
+"""df = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
     columns=['lat', 'lon'])
 
-st.map(df)
+st.map(df)"""
