@@ -20,6 +20,6 @@ x1, y1 = transf.transform(data['X'], data['Y'])
 lat = x1
 lon = y1
 
-trees = pd.DataFrame(columns=['lat','lon'], use_container_width=True)
+trees = pd.DataFrame(columns=['lat','lon'])
 
 st.map(trees)
