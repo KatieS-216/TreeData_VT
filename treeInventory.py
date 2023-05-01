@@ -7,7 +7,7 @@ from vega_datasets import data
 treedata = pd.read_csv('https://raw.githubusercontent.com/KatieS-216/TreeData_VT/main/Municipal_Tree_Inventory.csv', low_memory=False)
 
 # mapCol = st.columns(1)
-# col2, col3= st.columns(2)
+col2, col3= st.columns(2)
 
 transf = Transformer.from_crs( "epsg:3684","epsg:4326",always_xy=False)
 
@@ -16,6 +16,9 @@ x1, y1 = transf.transform(treedata['X'], treedata['Y'])
 d = {'lat': x1, 'lon': y1}
 
 alt.data_transformers.disable_max_rows()
+
+"""
+# MAP
 
 # Read trees in points
 trees = pd.DataFrame(d)
@@ -41,6 +44,7 @@ points = alt.Chart(trees).mark_circle(
 )
 
 states + points
+"""
 
 with col2:
     alt.Chart(treedata).mark_bar().encode(
