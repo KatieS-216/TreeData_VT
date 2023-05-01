@@ -22,7 +22,7 @@ token = 'pk.eyJ1Ijoia2F0aWUtcy0yMTYiLCJhIjoiY2xoNWhrdjdwMDE1OTNkcDUwMDZ0b3hqYiJ9
 
 treemap = pd.DataFrame(
     d,
-    columns=['lat', 'lon'])
+    columns=['lat', 'lon']).dropna()
 
 st.map(treemap)
 
