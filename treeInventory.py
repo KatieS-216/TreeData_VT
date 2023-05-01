@@ -20,11 +20,11 @@ d = {'lat': x1, 'lon': y1}
 
 token = 'pk.eyJ1Ijoia2F0aWUtcy0yMTYiLCJhIjoiY2xoNWhrdjdwMDE1OTNkcDUwMDZ0b3hqYiJ9.kov77lplpJ-rqzlQeExusw'
 
-df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
+treemap = pd.DataFrame(
+    d,
     columns=['lat', 'lon'])
 
-st.map(df)
+st.map(treemap)
 
 # treemap = pd.Dataframe(columns= [d['lat'], d['lon']])
 # st.map(treemap)
