@@ -15,10 +15,10 @@ x1, y1 = transf.transform(treedata['X'], treedata['Y'])
 
 d = {'lat': x1, 'lon': y1}
 
-alt.data_transformers.disable_max_rows()
+# alt.data_transformers.disable_max_rows()
 
 token = 'pk.eyJ1Ijoia2F0aWUtcy0yMTYiLCJhIjoiY2xoNWhrdjdwMDE1OTNkcDUwMDZ0b3hqYiJ9.kov77lplpJ-rqzlQeExusw'
 
-treemap = pd.Dataframe(d)
+treemap = pd.Dataframe(columns= [d['lat'], d['lon']])
 
 st.map(treemap)
