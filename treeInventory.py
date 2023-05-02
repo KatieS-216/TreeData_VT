@@ -35,4 +35,4 @@ hist_condition = alt.Chart(treedata).mark_bar().encode(
      alt.X("Condition:Q", bin=True),
      y='count')
     
-st.altair_chart(hist_class)
+st.altair_chart(hist_condition)
