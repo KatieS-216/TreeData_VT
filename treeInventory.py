@@ -72,7 +72,7 @@ st.altair_chart(hist_condition)
 #SCATTER - Median Tree Conditon by Town
 scatter_medCond=alt.Chart(treedata).mark_circle(size=60).encode(
     x='TOWN',
-    y='median(ConditionID)',
+    y=alt.Y('median(ConditionID)', title="Median Condition of Trees"),
     color= 'ConditionID',
     tooltip=['TOWN', 'SPECIES', 'ConditionID'] 
 ).interactive()
