@@ -74,15 +74,7 @@ st.altair_chart(hist_condition)
 scatter_tree = alt.Chart(treedata).mark_circle().encode(
      x='TOWN',
      y='OBJECTID',
-     color = alt.condition(
-         alt.datum.categories == 'ConditionID',
-         alt.value("#7d0200"),
-         alt.value("#000000"),
-         alt.value("#00ff26"),
-         alt.value("#f6ff00"),
-         alt.value("#ff9d00"),
-         alt.value("#6e6e6e")
-    ),
+     color = 'ConditionID',
      tooltip = ['SPECIES','ConditionID','Diameter','TOWN']
  ).interactive()
 
