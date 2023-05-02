@@ -68,3 +68,18 @@ hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar(
      y='count()')
     
 st.altair_chart(hist_condition)
+
+#LAYERED HISTOGRAM - Average Tree Conditon by Town
+layereHist = alt.Chart(treedata).transform_fold(
+    'ConditionID',
+    as_=['Condition', 'Measurement']
+).mark_bar(
+    opacity=0.3,
+    binSpacing=0
+).encode(
+    alt.X('TOWN:Q').bin(maxbins=100),
+    alt.Y('count()').stack(None),
+    alt.Color('ConditionID:N')
+)
+
+st.altair_chart(layereHist)
