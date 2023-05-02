@@ -33,26 +33,26 @@ st.map(treemap)
 #DIVIDER
 st.divider()
 
+# BAR - Number of Trees per Town
+bar_number = alt.Chart(treedata, title="Number of Trees per Town").mark_bar().encode(
+    x='TOWN',
+    y= alt.Y('count(OBJECTID)', title="Number of Trees")
+  )
+
+st.altair_chart(bar_number)
+
+#DIVIDER
+st.divider()
+
 # BAR - GOOD Trees by Town
 bar_good = alt.Chart(treedata, title="Number of Good Trees by Town").mark_bar().encode(
     x='TOWN',
-    y= alt.Y('count(ConditionID)', title="Number of Trees")
+    y= alt.Y('count(ConditionID)', title="Count of Good Trees")
   ).transform_filter(
     alt.FieldEqualPredicate(field='ConditionID', equal='GOOD')
 )
 
 st.altair_chart(bar_good)
-
-#DIVIDER
-st.divider()
-
-# BAR - Number of Trees per Town
-bar_number = alt.Chart(treedata, title="Number of Trees per Town").mark_bar().encode(
-    x='TOWN',
-    y= alt.Y('count(OBJECTID)', title="Count of Good Trees")
-  )
-
-st.altair_chart(bar_number)
 
 #DIVIDER
 st.divider()
