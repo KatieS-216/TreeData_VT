@@ -78,6 +78,9 @@ with col1:
     st.altair_chart(bar_good)
 
 with col2:
+    #DIVIDER
+    st.divider()
+    
     # HISTOGRAM - Count of Tree Conditions
     hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar().encode(
         x='ConditionID',
