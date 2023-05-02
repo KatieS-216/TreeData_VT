@@ -70,7 +70,7 @@ hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar(
 st.altair_chart(hist_condition)
 
 # SCATTER- Count of Tree Conditions
-scatter_tree = alt.Chart(treeata).mark_circle().encode(
+scatter_tree = alt.Chart(treedata).mark_circle().encode(
      x='TOWN',
      y='OBJECTID',
      color = 'ConditionID',
