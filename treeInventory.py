@@ -20,8 +20,8 @@ d = {'lat': x1, 'lon': y1}
 
 token = 'pk.eyJ1Ijoia2F0aWUtcy0yMTYiLCJhIjoiY2xoNWhrdjdwMDE1OTNkcDUwMDZ0b3hqYiJ9.kov77lplpJ-rqzlQeExusw'
 
-with mapCol:
-    treemap = pd.DataFrame(
+treemap = pd.DataFrame(
     d,
     columns=['lat', 'lon']).dropna()
-    st.map(treemap)
+
+st.map(treemap)
