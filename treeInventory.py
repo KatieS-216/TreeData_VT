@@ -69,26 +69,12 @@ hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar(
     
 st.altair_chart(hist_condition)
 
-#LAYERED HISTOGRAM - Average Tree Conditon by Town
-np.random.seed(42)
+#SCATTER - Median Tree Conditon by Town
+scatter_medCond=alt.Chart(treedata).mark_circle(size=60).encode(
+    x='TOWN',
+    y='median(ConditionID)',
+    color='ConditionID',
+    tooltip=['TOWN', 'SPECIES', 'ConditionID'] 
+).interactive()
 
-# Generating Data
-source = pd.DataFrame({
-    'Trial A': np.random.normal(0, 0.8, 1000),
-    'Trial B': np.random.normal(-2, 1, 1000),
-    'Trial C': np.random.normal(3, 2, 1000)
-})
-
-layerHist = alt.Chart(source).transform_fold(
-    ['Trial A', 'Trial B', 'Trial C'],
-    as_=['Experiment', 'Measurement']
-).mark_bar(
-    opacity=0.3,
-    binSpacing=0
-).encode(
-    alt.X('Measurement:Q').bin(maxbins=100),
-    alt.Y('count()').stack(None),
-    alt.Color('Experiment:N')
-)
-
-st.altair_chart(layerHist)
+st.altair_chart(scatter_medCond)
