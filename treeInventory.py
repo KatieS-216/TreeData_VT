@@ -4,9 +4,12 @@ from pyproj import Transformer
 import streamlit as st
 import numpy as np
 
+st.set_page_config(page_title="Titanic Data", layout="wide", initial_sidebar_state="collapsed")
+
+col1, col2 = st.columns(2)
+
 # IMPORT TREE DATA
 treedata = pd.read_csv('https://raw.githubusercontent.com/KatieS-216/TreeData_VT/main/Municipal_Tree_Inventory.csv', low_memory=False)
-
 
 # CONVERT COORDINATES
 transf = Transformer.from_crs( "epsg:3684","epsg:4326",always_xy=False)
@@ -21,15 +24,17 @@ alt.data_transformers.disable_max_rows()
 token = 'pk.eyJ1Ijoia2F0aWUtcy0yMTYiLCJhIjoiY2xoNWhrdjdwMDE1OTNkcDUwMDZ0b3hqYiJ9.kov77lplpJ-rqzlQeExusw'
 
 # TITLE
-st.title('Vermont Tree Inventory')
+#st.title('Vermont Tree Inventory')
 st.subheader("Does location impact the quality of trees in Vermont?")
 
-# MAP - Tree Locations
-treemap = pd.DataFrame(
-    d,
-    columns=['lat', 'lon']).dropna()
 
-st.map(treemap)
+with col1:
+    # MAP - Tree Locations
+    treemap = pd.DataFrame(
+        d,
+        columns=['lat', 'lon']).dropna()
+    
+    st.map(treemap)
 
 #DIVIDER
 st.divider()
