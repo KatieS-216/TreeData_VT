@@ -74,7 +74,7 @@ st.altair_chart(hist_condition)
 scatter_tree = alt.Chart(treedata).mark_circle().encode(
      x='TOWN',
      y='OBJECTID',
-     color = color=alt.condition(
+     color = alt.condition(
          alt.datum.categories == 'ConditionID',
          alt.value("#7d0200"),
          alt.value("#000000"),
