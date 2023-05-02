@@ -35,8 +35,9 @@ st.divider()
 
 # BAR - GOOD Trees by Town
 bar_good = alt.Chart(treedata, title="Number of Good Trees by Town").mark_bar().encode(
-      x='TOWN',
-      y= alt.Y('count(ConditionID)', title="Count of Good Trees")
+    x='TOWN',
+    y= alt.Y('count(ConditionID)', title="Count of Good Trees"),
+    color = "green"
   ).transform_filter(
     alt.FieldEqualPredicate(field='ConditionID', equal='GOOD')
 )
@@ -52,6 +53,3 @@ hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar(
      y='count()')
     
 st.altair_chart(hist_condition)
-
-#DIVIDER
-st.divider()
