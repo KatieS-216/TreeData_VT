@@ -23,17 +23,10 @@ token = 'pk.eyJ1Ijoia2F0aWUtcy0yMTYiLCJhIjoiY2xoNWhrdjdwMDE1OTNkcDUwMDZ0b3hqYiJ9
 # TITLE
 st.title('Vermont Tree Inventory')
 
-# SET UP INITIAL VIEWPORT
-midpoint = (np.average(d['lat']), np.average(d['lon']))
-
-#viewport = {"latitude":midpoint[0], "longitude":midpoint[1], zoom=11}
-
 # MAP - Tree Locations
 treemap = pd.DataFrame(
     d,
-    columns=['lat', 'lon'],
-    zoom=11
-).dropna()
+    columns=['lat', 'lon']).dropna()
 
 st.map(treemap)
 
