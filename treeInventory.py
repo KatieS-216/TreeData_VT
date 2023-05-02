@@ -22,6 +22,7 @@ token = 'pk.eyJ1Ijoia2F0aWUtcy0yMTYiLCJhIjoiY2xoNWhrdjdwMDE1OTNkcDUwMDZ0b3hqYiJ9
 
 # TITLE
 st.title('Vermont Tree Inventory')
+st.subheader("Does location impact the quality of trees in Vermont?")
 
 # MAP - Tree Locations
 treemap = pd.DataFrame(
