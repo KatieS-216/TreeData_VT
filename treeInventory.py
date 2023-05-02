@@ -37,8 +37,8 @@ hist_condition = alt.Chart(treedata).mark_bar().encode(
     
 st.altair_chart(hist_condition)
 
-# SCATTERPLOT - 
-scatter_class = alt.Chart(data).mark_circle().encode(
+# SCATTERPLOT - GOOD Trees by Town
+scatter_good = alt.Chart(data).mark_circle().encode(
       x='ConditionID',
       y='Town',
       color = 'Survived',
@@ -47,4 +47,4 @@ scatter_class = alt.Chart(data).mark_circle().encode(
     alt.FieldEqualPredicate(field='ConditionID', equal='GOOD')
 )
 
-  st.altair_chart(scatter_class)
+ st.altair_chart(scatter_good)
