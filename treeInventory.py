@@ -26,7 +26,7 @@ st.title('Vermont Tree Inventory')
 # SET UP INITIAL VIEWPORT
 midpoint = (np.average(d['lat']), np.average(d['lon']))
 
-viewport = {"latitude":midpoint[0], "longitude":midpoint[1], zoom:11}
+viewport = {"latitude":midpoint[0], "longitude":midpoint[1], zoom=11}
 
 # MAP - Tree Locations
 treemap = pd.DataFrame(
