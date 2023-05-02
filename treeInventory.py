@@ -40,7 +40,7 @@ st.altair_chart(hist_condition)
 # BAR - GOOD Trees by Town
 bar_good = alt.Chart(treedata, title="Number of Good Trees by Town").mark_bar().encode(
       x='TOWN',
-      alt.Y=('count(ConditionID)').title("# of Good Trees")
+      y='count(ConditionID)'
   ).transform_filter(
     alt.FieldEqualPredicate(field='ConditionID', equal='GOOD')
 )
