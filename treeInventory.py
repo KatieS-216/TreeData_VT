@@ -68,3 +68,13 @@ hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar(
      y='count()')
     
 st.altair_chart(hist_condition)
+
+# SCATTER- Count of Tree Conditions
+ scatter_class = alt.Chart(data).mark_circle().encode(
+     x='TOWN',
+     y='OBJECTID',
+     color = 'ConditionID',
+     tooltip = ['SPECIES','ConditionID','Diameter','TOWN']
+ ).interactive()
+
+ st.altair_chart(scatter_class)
