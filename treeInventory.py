@@ -31,14 +31,14 @@ treemap = pd.DataFrame(
 st.map(treemap)
 
 # HISTOGRAM - Count of Tree Conditions
-hist_condition = alt.Chart(treedata).mark_bar().encode(
+hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar().encode(
      x='ConditionID',
      y='count()')
     
 st.altair_chart(hist_condition)
 
 # BAR - GOOD Trees by Town
-bar_good = alt.Chart(treedata).mark_bar().encode(
+bar_good = alt.Chart(treedata, title="Number of Good Trees by Town").mark_bar().encode(
       x='TOWN',
       y='count(ConditionID)'
   ).transform_filter(
