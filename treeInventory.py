@@ -6,7 +6,7 @@ import numpy as np
 
 st.set_page_config(page_title="Titanic Data", layout="wide", initial_sidebar_state="collapsed")
 
-col1, col2 = st.columns(2, gap="medium")
+col1, col2 = st.columns(2, gap="large")
 
 # IMPORT TREE DATA
 treedata = pd.read_csv('https://raw.githubusercontent.com/KatieS-216/TreeData_VT/main/Municipal_Tree_Inventory.csv', low_memory=False)
