@@ -91,4 +91,4 @@ layerHist = alt.Chart(source).transform_fold(
     alt.Color('Experiment:N')
 )
 
-st.altair_chart(layereHist)
+st.altair_chart(layerHist)
