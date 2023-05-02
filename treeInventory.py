@@ -51,6 +51,8 @@ bar_good = alt.Chart(treedata, title="Number of Good Trees by Town").mark_bar().
     y= alt.Y('count(ConditionID)', title="Count of Good Trees")
   ).transform_filter(
     alt.FieldEqualPredicate(field='ConditionID', equal='GOOD')
+).configure_mark(
+    color='#1a8747'
 )
 
 st.altair_chart(bar_good)
