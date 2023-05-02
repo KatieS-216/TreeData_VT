@@ -36,3 +36,15 @@ hist_condition = alt.Chart(treedata).mark_bar().encode(
      y='count()')
     
 st.altair_chart(hist_condition)
+
+# SCATTERPLOT - 
+scatter_class = alt.Chart(data).mark_circle().encode(
+      x='ConditionID',
+      y='Town',
+      color = 'Survived',
+      tooltip = ['Age','Fare','Survived','Name']
+  ).interactive().transform_filter(
+    alt.FieldEqualPredicate(field='ConditionID', equal='GOOD')
+)
+
+  st.altair_chart(scatter_class)
