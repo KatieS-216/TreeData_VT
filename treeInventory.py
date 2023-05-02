@@ -77,4 +77,4 @@ scatter_tree = alt.Chart(treeata).mark_circle().encode(
      tooltip = ['SPECIES','ConditionID','Diameter','TOWN']
  ).interactive()
 
- st.altair_chart(scatter_tree)
+st.altair_chart(scatter_tree)
