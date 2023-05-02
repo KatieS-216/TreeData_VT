@@ -73,7 +73,7 @@ st.altair_chart(hist_condition)
 scatter_medCond=alt.Chart(treedata).mark_circle(size=60).encode(
     x='TOWN',
     y='median(ConditionID)',
-    color= 'ConditionID',
+    color= alt.Color('category', scale=alt.Scale(scheme='# redyellowblue')),
     tooltip=['TOWN', 'SPECIES', 'ConditionID'] 
 ).interactive()
 
