@@ -84,13 +84,17 @@ with col3:
     # HISTOGRAM - Count of Tree Conditions
     hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar().encode(
         x='ConditionID',
-        y='count()')
+        y='count()').configure_mark(
+        color='#45875d'
+    )
     
     st.altair_chart(hist_condition)
     
     # HISTOGRAM - Count of Tree Conditions by Species
     hist_species = alt.Chart(treedata, title="Count of Tree Conditions by Species").mark_bar().encode(
         x='count(ConditionID)',
-        y='SPECIES')
+        y='SPECIES').configure_mark(
+        color='#257869'
+    )
     
     st.altair_chart(hist_species)
