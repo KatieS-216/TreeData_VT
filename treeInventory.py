@@ -34,6 +34,18 @@ st.map(treemap)
 #DIVIDER
 st.divider()
 
+
+#SCATTER - Median Tree Conditon by Town
+scatter_medCond=alt.Chart(treedata).mark_circle(size=60).encode(
+    x='TOWN',
+    y=alt.Y('median(ConditionID)', title="Median Condition of Trees"),
+    color= 'ConditionID',
+    tooltip=['TOWN', 'SPECIES', 'ConditionID'] 
+).interactive()
+
+st.altair_chart(scatter_medCond)
+
+
 # BAR - Number of Trees per Town
 bar_number = alt.Chart(treedata, title="Number of Trees per Town").mark_bar().encode(
     x='TOWN',
@@ -68,13 +80,3 @@ hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar(
      y='count()')
     
 st.altair_chart(hist_condition)
-
-#SCATTER - Median Tree Conditon by Town
-scatter_medCond=alt.Chart(treedata).mark_circle(size=60).encode(
-    x='TOWN',
-    y=alt.Y('median(ConditionID)', title="Median Condition of Trees"),
-    color= 'ConditionID',
-    tooltip=['TOWN', 'SPECIES', 'ConditionID'] 
-).interactive()
-
-st.altair_chart(scatter_medCond)
