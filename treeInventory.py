@@ -30,6 +30,9 @@ treemap = pd.DataFrame(
 
 st.map(treemap)
 
+#DIVIDER
+st.divider()
+
 # BAR - GOOD Trees by Town
 bar_good = alt.Chart(treedata, title="Number of Good Trees by Town").mark_bar().encode(
       x='TOWN',
@@ -40,9 +43,15 @@ bar_good = alt.Chart(treedata, title="Number of Good Trees by Town").mark_bar().
 
 st.altair_chart(bar_good)
 
+#DIVIDER
+st.divider()
+
 # HISTOGRAM - Count of Tree Conditions
 hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar().encode(
      x='ConditionID',
      y='count()')
     
 st.altair_chart(hist_condition)
+
+#DIVIDER
+st.divider()
