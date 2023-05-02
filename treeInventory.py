@@ -70,10 +70,21 @@ hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar(
 st.altair_chart(hist_condition)
 
 #SCATTER - Median Tree Conditon by Town
+
+# color scale
+domain = treedata['ConditionID']
+range = [
+    '#999999',
+    '#000000',
+    '#00b52d',
+    '#e6cf00',
+    '#ff9500',
+    '#b80000']    
+    
 scatter_medCond=alt.Chart(treedata).mark_circle(size=60).encode(
     x='TOWN',
     y='median(ConditionID)',
-    color='ConditionID',
+    color= alt.Color("Condition", scale=alt.Scale(domain=domain, range=range)),
     tooltip=['TOWN', 'SPECIES', 'ConditionID'] 
 ).interactive()
 
