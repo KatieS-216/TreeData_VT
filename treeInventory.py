@@ -38,7 +38,9 @@ st.divider()
 bar_number = alt.Chart(treedata, title="Number of Trees per Town").mark_bar().encode(
     x='TOWN',
     y= alt.Y('count(OBJECTID)', title="Number of Trees")
-  )
+  ).configure_mark(
+    color='#1a8747'
+)
 
 st.altair_chart(bar_number)
 
@@ -52,7 +54,7 @@ bar_good = alt.Chart(treedata, title="Number of Good Trees by Town").mark_bar().
   ).transform_filter(
     alt.FieldEqualPredicate(field='ConditionID', equal='GOOD')
 ).configure_mark(
-    color='#1a8747'
+    color='#257869'
 )
 
 st.altair_chart(bar_good)
