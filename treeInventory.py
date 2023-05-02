@@ -39,7 +39,7 @@ bar_number = alt.Chart(treedata, title="Number of Trees per Town").mark_bar().en
     x='TOWN',
     y= alt.Y('count(OBJECTID)', title="Number of Trees")
   ).configure_mark(
-    color='#1a8747'
+    color='#45875d'
 )
 
 st.altair_chart(bar_number)
