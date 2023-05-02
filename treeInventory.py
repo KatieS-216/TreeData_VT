@@ -47,4 +47,4 @@ scatter_good = alt.Chart(data).mark_circle().encode(
     alt.FieldEqualPredicate(field='ConditionID', equal='GOOD')
 )
 
- st.altair_chart(scatter_good)
+st.altair_chart(scatter_good)
