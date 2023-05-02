@@ -70,11 +70,14 @@ hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar(
 st.altair_chart(hist_condition)
 
 # SCATTER- Count of Tree Conditions
+
+brush = alt.selection_interval()
+
 scatter_tree = alt.Chart(treedata).mark_circle().encode(
      x='TOWN',
      y='OBJECTID',
-     color = 'ConditionID',
+     color = alt.condition(brush, 'ConditionID', alt.value('green')),
      tooltip = ['SPECIES','ConditionID','Diameter','TOWN']
- ).interactive()
+ ).interactive().add_params(brush)
 
 st.altair_chart(scatter_tree)
