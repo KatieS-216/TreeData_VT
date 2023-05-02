@@ -6,7 +6,7 @@ import numpy as np
 
 st.set_page_config(page_title="Titanic Data", layout="wide", initial_sidebar_state="collapsed")
 
-col1, col2 = st.columns(2, gap="large")
+col1, col2, col3 = st.columns(3, gap="large")
 
 # IMPORT TREE DATA
 treedata = pd.read_csv('https://raw.githubusercontent.com/KatieS-216/TreeData_VT/main/Municipal_Tree_Inventory.csv', low_memory=False)
@@ -78,12 +78,17 @@ with col1:
     st.altair_chart(bar_good)
 
 with col2:
-    #DIVIDER
-    st.divider()
-    
     # HISTOGRAM - Count of Tree Conditions
     hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar().encode(
         x='ConditionID',
         y='count()')
+    
+    st.altair_chart(hist_condition)
+    
+with col2:
+    # HISTOGRAM - Count of Tree Conditions by Species
+    hist_condition = alt.Chart(treedata, title="Count of Tree Conditions").mark_bar().encode(
+        x='Species',
+        y='count(ConditionID)')
     
     st.altair_chart(hist_condition)
