@@ -3,7 +3,6 @@ import altair as alt
 from pyproj import Transformer
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
 
 # IMPORT TREE DATA
 treedata = pd.read_csv('https://raw.githubusercontent.com/KatieS-216/TreeData_VT/main/Municipal_Tree_Inventory.csv', low_memory=False)
