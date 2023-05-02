@@ -71,13 +71,19 @@ st.altair_chart(hist_condition)
 
 # SCATTER- Count of Tree Conditions
 
-brush = alt.selection_interval()
-
 scatter_tree = alt.Chart(treedata).mark_circle().encode(
      x='TOWN',
      y='OBJECTID',
-     color = alt.condition(brush, 'ConditionID', alt.value('green')),
+     color = color=alt.condition(
+         alt.datum.categories == 'ConditionID',
+         alt.value("#7d0200"),
+         alt.value("#000000"),
+         alt.value("#00ff26"),
+         alt.value("#f6ff00"),
+         alt.value("#ff9d00"),
+         alt.value("#6e6e6e")
+    ),
      tooltip = ['SPECIES','ConditionID','Diameter','TOWN']
- ).interactive().add_params(brush)
+ ).interactive()
 
 st.altair_chart(scatter_tree)
