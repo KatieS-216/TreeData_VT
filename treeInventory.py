@@ -32,7 +32,7 @@ st.map(treemap)
 
 # HISTOGRAM - Count of Tree Conditions
 hist_condition = alt.Chart(treedata).mark_bar().encode(
-     alt.X("Condition:Q", bin=True),
-     y='count')
+     x='ConditionID',
+     y='count()')
     
 st.altair_chart(hist_condition)
