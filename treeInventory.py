@@ -38,7 +38,7 @@ hist_condition = alt.Chart(treedata).mark_bar().encode(
 st.altair_chart(hist_condition)
 
 # SCATTERPLOT - GOOD Trees by Town
-scatter_good = alt.Chart(data).mark_circle().encode(
+scatter_good = alt.Chart(treedata).mark_circle().encode(
       x='ConditionID',
       y='Town',
       color = 'Survived',
