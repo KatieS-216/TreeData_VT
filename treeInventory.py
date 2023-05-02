@@ -24,5 +24,4 @@ with mapCol:
     treemap = pd.DataFrame(
     d,
     columns=['lat', 'lon']).dropna()
-
-st.map(treemap)
+    st.map(treemap)
