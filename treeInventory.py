@@ -41,8 +41,7 @@ st.altair_chart(hist_condition)
 scatter_good = alt.Chart(treedata).mark_circle().encode(
       x='ConditionID',
       y='Town',
-      color = 'Survived',
-      tooltip = ['Age','Fare','Survived','Name']
+      tooltip = ['Species','Diameter']
   ).interactive().transform_filter(
     alt.FieldEqualPredicate(field='ConditionID', equal='GOOD')
 )
